@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Hospital.Core.Models;
+using Microsoft.AspNetCore.Identity;
+
+namespace Hospital.Core.IReposatory
+{
+    public interface ITokenReposatory
+    {
+        Task<string> GenerateJwtToken(ApplicationUser user, UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager);
+        RefreshToken GenerateRefreshToken();
+        Task<bool> RevokeRefreshTokenAsync(string token, UserManager<ApplicationUser> userManager);
+    }
+}
