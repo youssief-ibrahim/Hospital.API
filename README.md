@@ -8,11 +8,13 @@ Hospital Management System built using ASP.NET Core with Onion Architecture.
 
 - Authentication & Authorization (JWT + Refresh Tokens)
 - Account
+- ِAccountant
 - Doctor
 - Department
 - Patient
 - Appointment Scheduling
 - Billing System
+- Inpetion Admition
 - Laboratory
 - Room
 - Staff 
@@ -46,3 +48,23 @@ Hospital Management System built using ASP.NET Core with Onion Architecture.
 ---
 
 ## 📸 Project Screenshots
+
+## 🗄️ Database Diagram
+![Database](images/Database.png)
+
+### 👤 Account & Accountant
+![Account & Accountant](images/Account_Accountant.png)
+
+### 📅 Appointment, Authentication & Billing
+![Appointment Authentication Billing](images/Appointment_Authentication_Billing.png)
+
+### 🏥 Department, Doctor & Inpatient Admission
+![Department Doctor Inpatient](images/Department_Doctor_Inpition-Admission.png)
+
+### 🧪 Laboratory, Patient & Role
+![Laboratory Patient Role](images/Laboratory_Patient_Role.png)
+
+### 🛏️ Room & Staff
+![Room Staff](images/Room_Staff.png)
+
+---
