@@ -59,7 +59,7 @@ Hospital Management System built using ASP.NET Core with Onion Architecture.
 ![Appointment Authentication Billing](images/Appointment_Authentication_Billing.png)
 
 ### 🏥 Department, Doctor & Inpatient Admission
-![Department Doctor Inpatient](images/Department_Doctor_Inpition-Admission.png)
+![Department Doctor Inpatient](images/Department_Doctor_Inpition-Admition.png)
 
 ### 🧪 Laboratory, Patient & Role
 ![Laboratory Patient Role](images/Laboratory_Patient_Role.png)
