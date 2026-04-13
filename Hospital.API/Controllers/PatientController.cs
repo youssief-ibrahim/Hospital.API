@@ -49,6 +49,7 @@ namespace Hospital.API.Controllers
                 return BadRequest(ModelState);
 
             var userid = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
             var patient = mapper.Map<Patient>(createPatient);
             patient.UserId = userid;
 

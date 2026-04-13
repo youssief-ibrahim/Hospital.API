@@ -7,7 +7,7 @@ using Microsoft.Extensions.Localization;
 using Newtonsoft.Json;
 
 namespace Hospital.EF.Localization
-{
+{   
     public class JsonStringLocalizer: IStringLocalizer
     {
         private readonly JsonSerializer seryalizer = new JsonSerializer();
@@ -94,4 +94,5 @@ namespace Hospital.EF.Localization
             return string.Empty;
         }
     }
+
 }

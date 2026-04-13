@@ -40,18 +40,27 @@ namespace Hospital.API.Controllers
             // Generate access token
             var accessToken = await tokenService.GenerateJwtToken(user, userManager, roleManager);
 
-            var newRefreshToken = tokenService.GenerateRefreshToken();
+           var activetoken = user.RefreshTokens.FirstOrDefault(t => t.IsActive);
+            RefreshToken refreshToken;
+            if (activetoken != null)
+            {
+                refreshToken=activetoken;
+            }
+            else
+            {
+                refreshToken = tokenService.GenerateRefreshToken();
+                user.RefreshTokens.Add(refreshToken);
+                await userManager.UpdateAsync(user);
+            }
+            
 
-            user.RefreshTokens.Add(newRefreshToken);
-            await userManager.UpdateAsync(user);
-
-            SetRefreshTokenInCookie(newRefreshToken.Token, newRefreshToken.ExpireOn);
+            SetRefreshTokenInCookie(refreshToken.Token, refreshToken.ExpireOn);
 
             return Ok(new TokenResnoseDTO
             {
                 Token = accessToken,
-                RefreshToken = newRefreshToken.Token,
-                RefreshTokenExpires = newRefreshToken.ExpireOn,
+                RefreshToken = refreshToken.Token,
+                RefreshTokenExpires = refreshToken.ExpireOn,
                 IsAuthanticated = true
             });
         }
