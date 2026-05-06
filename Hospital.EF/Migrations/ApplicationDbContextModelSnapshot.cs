@@ -46,7 +46,7 @@ namespace Hospital.EF.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Accountants");
+                    b.ToTable("Accountants", (string)null);
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.ApplicationRole", b =>
@@ -186,7 +186,7 @@ namespace Hospital.EF.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("Appointments");
+                    b.ToTable("Appointments", (string)null);
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.Billing", b =>
@@ -215,7 +215,7 @@ namespace Hospital.EF.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("Billings");
+                    b.ToTable("Billings", (string)null);
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.Department", b =>
@@ -232,7 +232,7 @@ namespace Hospital.EF.Migrations
 
                     b.HasKey("DepartmentId");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Departments", (string)null);
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.Doctor", b =>
@@ -271,7 +271,7 @@ namespace Hospital.EF.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Doctors");
+                    b.ToTable("Doctors", (string)null);
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.Inpatient_Admission", b =>
@@ -315,7 +315,7 @@ namespace Hospital.EF.Migrations
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("Inpatient_Admissions");
+                    b.ToTable("Inpatient_Admissions", (string)null);
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.Laboratory", b =>
@@ -348,7 +348,7 @@ namespace Hospital.EF.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("Laboratories");
+                    b.ToTable("Laboratories", (string)null);
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.Patient", b =>
@@ -386,7 +386,7 @@ namespace Hospital.EF.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Patients");
+                    b.ToTable("Patients", (string)null);
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.Room", b =>
@@ -413,7 +413,7 @@ namespace Hospital.EF.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Rooms");
+                    b.ToTable("Rooms", (string)null);
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.Staff", b =>
@@ -451,7 +451,7 @@ namespace Hospital.EF.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Staffs");
+                    b.ToTable("Staffs", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -570,7 +570,7 @@ namespace Hospital.EF.Migrations
 
             modelBuilder.Entity("Hospital.Core.Models.ApplicationUser", b =>
                 {
-                    b.OwnsMany("Hospital.Core.Models.RefreshToken", "RefreshTokens", b1 =>
+                    b.OwnsMany("Hospital.Core.Models.ApplicationUser.RefreshTokens#Hospital.Core.Models.RefreshToken", "RefreshTokens", b1 =>
                         {
                             b1.Property<int>("ApplicationUserId")
                                 .HasColumnType("int");
@@ -596,7 +596,7 @@ namespace Hospital.EF.Migrations
 
                             b1.HasKey("ApplicationUserId", "Id");
 
-                            b1.ToTable("RefreshToken");
+                            b1.ToTable("RefreshToken", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("ApplicationUserId");
